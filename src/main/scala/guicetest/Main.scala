@@ -8,7 +8,10 @@ object Main {
 
     val injector = Guice.createInjector(new Module)
 
+    println("Getting searchController ref")
     val searchCtrl = injector.instance[SearchController]
+
+    println("Getting bookingController ref")
     val bookingCtrl = injector.instance[BookingController]
 
     println("First search...")

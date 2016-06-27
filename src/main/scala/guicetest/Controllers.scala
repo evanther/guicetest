@@ -15,6 +15,8 @@ trait BookingController {
 @Singleton
 class SearchControllerImpl @Inject() (searchService: SearchService) extends SearchController {
 
+  println("Initialazing SearchControllerImpl")
+
   override def search(provider: String): List[String] = {
     println("Search Controller")
     searchService.search(provider, new Date())
@@ -25,6 +27,8 @@ class SearchControllerImpl @Inject() (searchService: SearchService) extends Sear
 // Ejemplo inyeccion por Setter
 @Singleton
 class BookingControllerImpl extends BookingController {
+
+  println("Initialazing BookingControllerImpl")
 
   @Inject
   var bookingService: BookingService = null
