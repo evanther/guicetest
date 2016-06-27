@@ -31,7 +31,7 @@ class BookingControllerImpl extends BookingController {
 
   override def book(provider: String, checkoutId: Long): Unit = {
     println("Booking Controller")
-    bookingService.book(provider, 12121212L, new Date())
+    bookingService.book(provider, checkoutId, new Date())
   }
 
 }

@@ -15,7 +15,7 @@ trait BookingService {
 class SearchServiceImpl extends SearchService {
 
   override def search(provider: String, today: Date): List[String] = {
-    println("Search Service")
+    println(s"Search Service -> Date: $today")
     Nil
   }
 
@@ -24,6 +24,6 @@ class SearchServiceImpl extends SearchService {
 @Singleton
 class BookingServiceImpl extends BookingService {
   override def book(provider: String, checkoutId: Long, today: Date): Unit ={
-    println("Booking Service")
+    println(s"Booking Service -> CheckoutId: $checkoutId")
   }
 }
