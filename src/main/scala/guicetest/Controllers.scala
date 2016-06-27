@@ -1,7 +1,7 @@
 package guicetest
 
 import java.util.Date
-import javax.inject.{Singleton, Inject}
+import javax.inject.{Inject, Named, Singleton}
 
 trait SearchController {
   def search(provider: String): List[String]
@@ -9,6 +9,7 @@ trait SearchController {
 
 trait BookingController {
   def book(provider: String, checkoutId: Long)
+  def specialBook(provider: String, checkoutId: Long)
 }
 
 // Ejemplo inyeccion por constructor
@@ -33,9 +34,18 @@ class BookingControllerImpl extends BookingController {
   @Inject
   var bookingService: BookingService = null
 
+  @Inject
+  @Named("special")
+  var specialBookingService: BookingService = null
+
   override def book(provider: String, checkoutId: Long): Unit = {
     println("Booking Controller")
     bookingService.book(provider, checkoutId, new Date())
+  }
+
+  override def specialBook(provider: String, checkoutId: Long): Unit = {
+    println("Special Booking Controller")
+    specialBookingService.book(provider, checkoutId, new Date())
   }
 
 }

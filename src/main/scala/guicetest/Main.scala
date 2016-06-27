@@ -17,8 +17,10 @@ object Main {
     println("First search...")
     searchCtrl.search("H")
 
-    println("Then book...")
-    bookingCtrl.book("PEPE", 4545454L)
+    println("Then book standar...")
+    bookingCtrl.book("Standar Book", 4545454L)
 
+    println("Then book special...")
+    bookingCtrl.specialBook("Special Book", 123123L)
   }
 }

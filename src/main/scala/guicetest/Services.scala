@@ -32,3 +32,13 @@ class BookingServiceImpl extends BookingService {
     println(s"Booking Service -> CheckoutId: $checkoutId")
   }
 }
+
+@Singleton
+class SpecialBookingServiceImpl extends BookingService {
+
+  println("Initialazing SpecialBookingServiceImpl")
+
+  override def book(provider: String, checkoutId: Long, today: Date): Unit ={
+    println(s"Special Booking Service -> CheckoutId: $checkoutId")
+  }
+}
